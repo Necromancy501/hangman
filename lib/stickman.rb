@@ -1,4 +1,6 @@
 class Stickman
+  attr_writer :current_stage
+
   def initialize
     @stages = [
       <<-STICK,
@@ -46,5 +48,9 @@ STICK
 
   def burn
     @current_stage += 1 unless @current_stage == @stages.length-1
+  end
+
+  def round
+    @current_stage+1
   end
 end
